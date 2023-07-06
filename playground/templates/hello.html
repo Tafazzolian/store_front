@@ -1,9 +1,26 @@
 <html>
   <body>
+    <!-- 
+    <p>{{ queryset.title }}</p> 
+    
+      -->
+    <ul>
+      {% for i in queryset%}
+      <li> {{ i.title }} 
+       - {{i}} $
+        </li>
+      {% endfor %}
+    </ul>
+  
+  
+    <!--
     {% if name %}
     <h1>Hello {{ name }}</h1>
     {% else %}
-    <h1>Hello World</h1>
+    
+    <h4>End of the list</h4>
+    
     {% endif %}
+    -->
   </body>
 </html>
