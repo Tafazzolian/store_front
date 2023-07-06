@@ -5,6 +5,7 @@ from django.db.models.aggregates import Count, Sum, Avg, Min, Max
 from django.db.models.functions import Concat
 from store.models import Product, Customer, OrderItem, Order, Collection
 
+#query testing
 def say_hello(request):
     last_order_id = ExpressionWrapper(F('unit_price') * 0.8, output_field=DecimalField()) 
     query_set = Product.objects.annotate(
