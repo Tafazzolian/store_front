@@ -11,5 +11,6 @@ def say_hello(request):
     query_set = Product.objects.annotate(
         money_spent=Sum(F('orderitem__unit_price')*F('orderitem__quantity'))).order_by('-money_spent')[:5]
     m1 = Product.objects.aaggregate(Max('price'))
+    restfulapi = Product.objects.all()
 
     return render(request, 'hello.html', {'queryset': query_set})
