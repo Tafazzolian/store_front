@@ -7,9 +7,6 @@ from store.models import Product, Customer, OrderItem, Order, Collection
 
 #query testing
 def say_hello(request):
-    last_order_id = ExpressionWrapper(F('unit_price') * 0.8, output_field=DecimalField()) 
-    query_set = Product.objects.annotate(
-        money_spent=Sum(F('orderitem__unit_price')*F('orderitem__quantity'))).order_by('-money_spent')[:5]
-    query_set_2 = Customer.objects.aaggregate(Max('birth_date'))
+    query_set = Customer.objects.annotate(result = Max('order__id'))
 
     return render(request, 'hello.html', {'queryset': query_set})
