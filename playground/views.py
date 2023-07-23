@@ -12,7 +12,7 @@ def say_hello(request):
         .select_related('tag')\
         .filter(
         content_type=content_type,
-        object_id = 1,
+        object_id = 6,
         )
 
     return render(request, 'hello.html', {'queryset': query_set})
