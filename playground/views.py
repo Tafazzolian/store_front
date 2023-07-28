@@ -15,8 +15,4 @@ def say_hello(request):
         object_id = 6,
         )
 
-def func():
-    y = input(int())
-    x = 2 + y
-
     return render(request, 'hello.html', {'queryset': query_set})
