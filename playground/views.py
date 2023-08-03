@@ -16,6 +16,3 @@ def say_hello(request):
         )
 
     return render(request, 'hello.html', {'queryset': query_set})
-
-dict = {'a':23, 'b':32}
-new_dict = dict.copy()
