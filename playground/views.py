@@ -16,3 +16,4 @@ def say_hello(request):
         )
 
     return render(request, 'hello.html', {'queryset': query_set})
+#today i learned about nginx
